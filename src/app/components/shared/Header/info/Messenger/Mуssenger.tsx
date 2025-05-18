@@ -12,7 +12,7 @@ export const MessengerLinks = ({ iconSize = 48 }: MessengerLinksProps) => (
     <ul className='row' style={{gap: '7px', listStyle: 'none', padding: 0}}>
       <li>
         <a href="https://wa.me/qr/3BYHIAJNBWXOD1" aria-label="Написать в WhatsApp">
-          <Image src="/whatsApp-icon.svg" alt="" aria-hidden="true" width={iconSize} height={iconSize}/>
+          <Image src="/whatsapp-icon.svg" alt="" aria-hidden="true" width={iconSize} height={iconSize}/>
         </a>
       </li>
       <li>
