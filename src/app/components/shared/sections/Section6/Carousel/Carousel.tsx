@@ -32,7 +32,7 @@ export const Carousel = ({ slides, options }: CarouselProps) => {
       <button className={cn(s.arrowWrapper, s.arrowRight)} onClick={onNextButtonClick} />
       <div className={s.emblaViewport} ref={emblaRef}>
         <div className={s.emblaContainer}>
-          {slides.map((url, i) => (
+          {slides.map(url => (
             <div className={s.emblaSlide} key={url}>
               <div className={s.imageWrapper}>
                 <Image src={url} alt="рабочий процесс" fill={true} className={s.image} />
@@ -44,7 +44,7 @@ export const Carousel = ({ slides, options }: CarouselProps) => {
 
       <div className={s.dotsLayout}>
         <div className={s.emblaDots}>
-          {scrollSnaps.map((snap, i) => (
+          {scrollSnaps.map((_, i) => (
             <DotButton
               key={i}
               onClick={() => onDotButtonClick(i)}
