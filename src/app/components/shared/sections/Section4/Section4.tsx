@@ -10,12 +10,12 @@ const services: CardData[] = [
   },
   {
     url: 'discount-2.svg',
-    title: 'Мойка кондиционеров',
+    title: 'Заправка кондиционеров',
     price: 1500,
   },
   {
     url: 'discount-3.svg',
-    title: 'Мойка кондиционеров',
+    title: 'Ремонт кондиционеров',
     price: 1500,
   }
 ]
