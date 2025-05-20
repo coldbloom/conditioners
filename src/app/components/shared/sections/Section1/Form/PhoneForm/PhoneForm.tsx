@@ -45,7 +45,7 @@ export const PhoneForm = () => {
 
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/feedback`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/feedback`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,10 +54,6 @@ export const PhoneForm = () => {
           phone: value,
         }),
       });
-
-      if (!response.ok) {
-        throw new Error('Ошибка при отправке формы');
-      }
 
       setValue(""); // Очищаем поле после успешной отправки
       notify();
