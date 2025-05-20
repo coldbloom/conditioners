@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: 'Ледяной Партнер',
     images: [
       {
-        url: 'https://ваш-сайт.ru/og-image.jpg',
+        url: '${process.env.NEXT_PUBLIC_SITE_URL || \'https://ваш-сайт.ru\'}/logo.svg',
         width: 1200,
         height: 630,
         alt: 'Ледяной Партнер',
