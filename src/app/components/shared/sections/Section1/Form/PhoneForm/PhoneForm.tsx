@@ -3,11 +3,27 @@
 import s from './PhoneForm.module.scss';
 import React, {ChangeEvent, FormEvent} from "react";
 import cn from "classnames";
+import {Loader} from "@/app/components/kit/Loader";
+import toast, { Toaster } from 'react-hot-toast';
+
+
+const notify = () => toast.success('Мы свяжемся с вами!', {
+  duration: 4000,
+  position: 'bottom-center',
+
+});
+
+const notifyError = () => toast.error('Произошла ошибка, попробуйте позже(', {
+  duration: 4000,
+  position: 'bottom-center',
+
+});
 
 export const PhoneForm = () => {
   const [value, setValue] = React.useState("");
-  const [checked, setChecked] = React.useState(false);
   const [error, setError] = React.useState(false);
+
+  const [isLoading, setIsLoading] = React.useState(false);
 
   // Регулярное выражение для проверки формата номера
   const phoneRegex = /^\+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/;
@@ -16,7 +32,7 @@ export const PhoneForm = () => {
     return phoneRegex.test(phone);
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!validatePhone(value)) {
@@ -24,7 +40,33 @@ export const PhoneForm = () => {
       return;
     }
 
-    //@TODO добавить запрос в crm или бот тг или серверную часть
+    setIsLoading(true);
+    setError(false);
+
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/feedback`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          phone: value,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Ошибка при отправке формы');
+      }
+
+      setValue(""); // Очищаем поле после успешной отправки
+      notify();
+    } catch (err) {
+      console.error('Ошибка:', err);
+      notifyError();
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -98,7 +140,7 @@ export const PhoneForm = () => {
         })}
         disabled={error} // Блокируем при ошибке или пустом поле
       >
-        Вызвать мастера
+        {isLoading ? <Loader size="m" color="light" /> : 'Вызвать мастера'}
       </button>
 
       <div className={s.checkboxWrapper}>
@@ -116,6 +158,7 @@ export const PhoneForm = () => {
           </a>
         </label>
       </div>
+      <Toaster />
     </form>
   )
 }
