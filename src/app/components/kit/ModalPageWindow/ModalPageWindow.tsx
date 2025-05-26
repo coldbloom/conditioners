@@ -1,4 +1,4 @@
-'use client'; // Исправьте опечатку ('use-clent' → 'use client')
+'use client';
 
 import React, { CSSProperties, ReactNode, useEffect, useRef, forwardRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
