@@ -30,11 +30,11 @@ const nextConfig: NextConfig = {
   },
 
   // Оптимизации
-  experimental: {
-    optimizePackageImports: ['lucide-react'], // Пример оптимизации иконок
-    serverMinification: true,
-    optimizeCss: true, // Оптимизация CSS
-  },
+  // experimental: {
+  //   optimizePackageImports: ['lucide-react'], // Пример оптимизации иконок
+  //   serverMinification: true,
+  //   optimizeCss: true, // Оптимизация CSS
+  // },
 };
 
 export default nextConfig;
