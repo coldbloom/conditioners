@@ -38,6 +38,24 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## codecake
 
 
+## yarn start:prod
+
+```bash
+    "start:prod": "pm2 start yarn -- start",
+```
+
+# Настройки NGINX
+### Где лежат конфигурация nginx ?
+_(root directory)_
+
+`cd /etc/nginx/sites-enabled/`
+
+_(name - имя папки в которую вы создали, создать папку с помощью команды `vi name` или `mkdir name`)_
+vim name
+
+
+
+
 NEXT_PUBLIC_SITE_URL
 
 Должен содержать публичный домен, а не localhost
@@ -49,5 +67,12 @@ NEXT_PUBLIC_API_URL
 /api — если API роуты находятся на том же домене
 
 Если API на другом сервере: полный URL (https://api.holodnipartner.ru)
+
+
+snap и apt работают глобально из любой директории
+
+
+
+клиент называется client в pm2
 
 
