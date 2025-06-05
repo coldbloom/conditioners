@@ -36,3 +36,18 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 ## conditioners 
 ## codecake
+
+
+NEXT_PUBLIC_SITE_URL
+
+Должен содержать публичный домен, а не localhost
+Используется в: metadataBase (для корректных абсолютных URL в метатегах)
+OpenGraph-изображениях (og:image) Sitemap.xml
+Канонических ссылках (canonical)
+Формат: https:// (обязательно с HTTPS для SEO)
+NEXT_PUBLIC_API_URL
+/api — если API роуты находятся на том же домене
+
+Если API на другом сервере: полный URL (https://api.holodnipartner.ru)
+
+

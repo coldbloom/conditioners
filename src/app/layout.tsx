@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: 'Профессиональный монтаж и обслуживание кондиционеров и холодильного оборудования. Гарантия качества, доступные цены, работаем в Донецке, ДНР.',
   keywords: ['кондиционер', 'кондиционеры', 'ремонт кондиционеров', 'обслуживание кондиционеров', 'кондей', 'промышленные холодильные установки'],
   // Основные метатеги
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ваш-сайт.ru'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://holodniypartner.ru/'),
 
   alternates: {
     canonical: '/', // Основная (каноническая) версия страницы
@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ледяной Партнер - Ремонт и обслуживание кондиционеров',
     description: 'Профессиональные услуги по ремонту и обслуживанию кондиционеров',
-    url: 'https://ваш-сайт.ru',
+    url: 'https://holodniypartner.ru/',
     siteName: 'Ледяной Партнер',
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://ваш-сайт.ru'}/og-image.jpg`,
+        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://holodniypartner.ru/'}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: 'Ледяной Партнер',
