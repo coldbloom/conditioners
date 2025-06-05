@@ -45,7 +45,7 @@ export const PhoneForm = () => {
 
 
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/feedback`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
