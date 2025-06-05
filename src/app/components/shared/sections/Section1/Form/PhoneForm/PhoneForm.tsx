@@ -53,6 +53,7 @@ export const PhoneForm = () => {
         body: JSON.stringify({
           phone: value,
         }),
+        mode: 'cors'
       });
 
       setValue(""); // Очищаем поле после успешной отправки

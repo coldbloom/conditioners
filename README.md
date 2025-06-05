@@ -50,6 +50,16 @@ _(root directory)_
 
 `cd /etc/nginx/sites-enabled/`
 
+### 1. Проверьте конфиг на ошибки:
+```bash 
+    nginx -t
+```
+
+### 2. Перезагрузи Nginx
+```bash 
+    sudo systemctl reload nginx
+```
+
 _(name - имя папки в которую вы создали, создать папку с помощью команды `vi name` или `mkdir name`)_
 vim name
 
