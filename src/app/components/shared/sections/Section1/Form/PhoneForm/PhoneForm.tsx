@@ -45,7 +45,7 @@ export const PhoneForm = () => {
 
 
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,8 +53,15 @@ export const PhoneForm = () => {
         body: JSON.stringify({
           phone: value,
         }),
-        mode: 'cors'
+        mode: 'cors',
+        credentials: 'omit' // Если не используете куки/авторизацию
       });
+
+      // Проверяем статус ответа
+      if (!response.ok) { // Если статус не 2xx (200-299)
+        const errorData = await response.text();
+        throw new Error(`HTTP error! status: ${response.status}, body: ${errorData}`);
+      }
 
       setValue(""); // Очищаем поле после успешной отправки
       notify();
