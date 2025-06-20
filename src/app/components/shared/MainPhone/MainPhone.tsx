@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './MainPhone.module.scss';
 
-const phone = '+79895052785';
-const prettyPhone = '+7 (989) 505-27-85';
+const phone = '+79499620894';
+const prettyPhone = '+7 (949) 962-08-94';
 export const MainPhone = () => {
   return (
     <a
