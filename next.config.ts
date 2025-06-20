@@ -26,7 +26,7 @@ const nextConfig: NextConfig = {
 
   // Переменные окружения
   env: {
-    SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://holodniypartner.ru/',
+    SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://conditioners-plum.vercel.app/',
   },
 
   // Оптимизации

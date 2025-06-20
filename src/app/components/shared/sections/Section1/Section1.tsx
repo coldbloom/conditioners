@@ -4,6 +4,7 @@ import Image from "next/image";
 import cn from "classnames";
 import s from './Section1.module.scss';
 import { Form } from './Form'
+import { MainPhone } from "@/app/components/shared/MainPhone";
 
 export const Section1 = () => {
   return (
@@ -18,6 +19,7 @@ export const Section1 = () => {
               fill
             />
           </div>
+          <MainPhone />
           <div className={s.textWrapper}>
             <div className={cn(s.saleWrapper, 'row')}>
               <Image src="/sale.svg" alt="Скидка" width={25} height={25}/>
